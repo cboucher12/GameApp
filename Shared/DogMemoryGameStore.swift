@@ -50,6 +50,10 @@ class DogMemoryGameStore: ObservableObject {
         model.foundMatch
     }
     
+    var score: Int {
+        model.score
+    }
+    
     func choose(_ card: MemoryGame.Card) {
        model.chooseCard(card)
     }

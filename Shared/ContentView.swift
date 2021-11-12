@@ -47,6 +47,7 @@ struct ContentView: View {
             !foundMatch ?
                 Text("Match the Dogs!").font(.largeTitle).foregroundColor(.green).bold() :
                 Text("Found a Match!").font(.largeTitle).foregroundColor(.black).bold()
+            Text("Score: \(viewModel.score)")
             ProgressView("\(viewModel.pairsMatched) of \(viewModel.totalPairs) Pairs Matched (outlined in red)",
                          value: Float(viewModel.pairsMatched), total: Float(viewModel.totalPairs))
                 .progressViewStyle((LinearProgressViewStyle(tint: .red)))

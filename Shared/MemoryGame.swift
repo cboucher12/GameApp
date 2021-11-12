@@ -20,6 +20,7 @@ struct  MemoryGame {
     private(set) var pairsMatched: Int
     private var numberUnMatchedFaceUp: Int
     private(set) var foundMatch: Bool
+    private(set) var score: Int = 0
 
     struct Card: Identifiable { // Struct
         var content: String
@@ -31,6 +32,7 @@ struct  MemoryGame {
     mutating func chooseCard(_ card: Card) {
         foundMatch = false
         numberUnMatchedFaceUp += 1
+        score += 1
         if numberUnMatchedFaceUp == 3 {
             for index in cards.indices { // Put all unmatched cards face down
                 if !cards[index].isMatched {
